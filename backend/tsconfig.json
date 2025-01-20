@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "declaration": true,
+      "sourceMap": true,
+      "outDir": "./dist",
+      "target": "ES2017",
+      "moduleResolution": "node",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "experimentalDecorators": true,  // Habilita el uso de decoradores
+      "emitDecoratorMetadata": true,   // Habilita la generación de metadatos de decoradores
+      "strictPropertyInitialization": false  // Deshabilita la verificación estricta de inicialización
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules", "dist"]
+  }
+  

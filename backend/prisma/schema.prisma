@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id                    Int      @id @default(autoincrement())
+  proposal             String
+  strategicImpact      Float    // 40% weight
+  technicalViability   Float    // 30% weight
+  associatedCost       Float    // 20% weight
+  implementationTime   Float    // 10% weight
+  totalScore          Float
+  priority            String
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
