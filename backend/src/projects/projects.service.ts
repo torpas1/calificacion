@@ -27,7 +27,8 @@ export class ProjectsService {
 
     return this.prisma.project.create({
       data: {
-        proposal,
+        proposal: 
+        { id: proposal.id }, // Aquí se usa la propiedad `id` para conectar con el registro de Proposal
         strategicImpact,
         technicalViability,
         associatedCost,
@@ -41,7 +42,7 @@ export class ProjectsService {
   findAll() {
     return this.prisma.project.findMany({
       orderBy: {
-        createdAt: 'desc',
+        totalScore: 'desc',
       },
     });
   }

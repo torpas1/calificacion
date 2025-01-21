@@ -4,7 +4,8 @@ export declare class ProjectsController {
     private readonly projectsService;
     constructor(projectsService: ProjectsService);
     create(createProjectDto: CreateProjectDto): Promise<{
-        proposal: string;
+        id: number;
+        proposal: import("@prisma/client/runtime/library").JsonValue;
         strategicImpact: number;
         technicalViability: number;
         associatedCost: number;
@@ -13,10 +14,10 @@ export declare class ProjectsController {
         priority: string;
         createdAt: Date;
         updatedAt: Date;
-        id: number;
     }>;
     findAll(): import(".prisma/client").Prisma.PrismaPromise<{
-        proposal: string;
+        id: number;
+        proposal: import("@prisma/client/runtime/library").JsonValue;
         strategicImpact: number;
         technicalViability: number;
         associatedCost: number;
@@ -25,6 +26,5 @@ export declare class ProjectsController {
         priority: string;
         createdAt: Date;
         updatedAt: Date;
-        id: number;
     }[]>;
 }
