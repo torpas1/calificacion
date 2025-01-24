@@ -154,9 +154,9 @@ export default function ProjectList() {
           <tbody className="bg-white divide-y divide-gray-200">
             {projects.map((project) => {
               const propuesta = 
-                typeof project.proposal === "object" && project.proposal.id
-                  ? propuestas.find((prop) => prop.id === project.proposal.id)
-                  : null;
+              typeof project.proposal === "object" && "id" in project.proposal && project.proposal.id
+              ? propuestas.find((prop) => prop.id === project.proposal)
+              : null;
 
               return (
                 <tr key={project.id}>
